@@ -8,5 +8,6 @@
  * -----------------------------------------------------------------------------
  * @NOTE
  */
+export * from './dynamic-class-config.model';
 export * from './dynamic-class.decorator';
 export * from './dynamic-class.factory';

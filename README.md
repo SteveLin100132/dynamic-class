@@ -14,7 +14,8 @@ npm i wistroni40-dynamic-class --save
 
 # Feature
 
-- 提更動態實例類別
+- 提供動態實例類別
+- 可自訂類別別名，讓產生實例時，可以透過其他名稱實例對應物件
 
 # Usage
 
@@ -33,6 +34,30 @@ export class CustomClass implements Custom {
 }
 ```
 
+#### @DynamicClass()
+
+該裝飾器提供以下配置
+
+| Paramter | Type                   | Description                |
+| -------- | ---------------------- | -------------------------- |
+| alias    | string &#124; string[] | 可提供單個或多個類別的別名 |
+
+```typescript
+// 單個別名
+@DynamicClass({
+  alias: 'AliasName'
+})
+class MyClass {}
+
+// 多個別名
+@DynamicClass({
+  alias: ['AliasName1', 'AliasName2', ...]
+})
+class MyClass {}
+```
+
+### Dynamic Class Factory
+
 使用 `DynamicClassFactory` 將指定的類別(以 String 給定類別名稱)實例
 
 ```typescript
@@ -43,6 +68,8 @@ const custom = DynamicClassFactory.createInstance<Custom>(
   'custom-property',
 );
 ```
+
+##### createInstance()
 
 | Paramter  | Type   | Description                                  |
 | --------- | ------ | -------------------------------------------- |

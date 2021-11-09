@@ -8,7 +8,10 @@
  * -----------------------------------------------------------------------------
  * @NOTE
  */
+import { DynamicClassConfig } from './dynamic-class-config.model';
 /**
  * 動態類別裝飾器
+ *
+ * @param config 動態類別設定
  */
-export declare function DynamicClass(): (target: Function) => void;
+export declare function DynamicClass(config?: DynamicClassConfig): (target: Function) => void;

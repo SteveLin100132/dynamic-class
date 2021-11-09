@@ -26,12 +26,22 @@ export interface Custom {
    * 自定義欄位
    */
   age?: number;
+
+  /**
+   * 自定義方法
+   *
+   * @method public
+   * @return 回傳
+   */
+  getId(): string;
 }
 
 /**
  * 自定義類別
  */
-@DynamicClass()
+@DynamicClass({
+  alias: 'CustomAliasA',
+})
 export class CustomA implements Custom {
   /**
    * 自定義欄位
@@ -43,7 +53,20 @@ export class CustomA implements Custom {
    * @param age  自定義欄位
    */
   constructor(public name: string, public age?: number) {}
+
+  /**
+   * 自定義方法
+   *
+   * @method public
+   * @return 回傳
+   */
+  public getId(): string {
+    return this._id;
+  }
 }
 
 const customer = Factory.createInstance<Custom>('CustomA', 'John', 20);
-console.log(customer);
+console.log(customer.getId(), customer);
+
+const customerAlias = Factory.createInstance<Custom>('CustomAliasA', 'Alias');
+console.log(customerAlias.getId(), customerAlias);
