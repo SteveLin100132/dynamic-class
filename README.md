@@ -1,9 +1,9 @@
-# wistroni40-dynamic-class
+# dynamic-class
 
 # Install
 
 ```
-npm i wistroni40-dynamic-class --save
+npm i dynamic-class --save
 ```
 
 # Table of Contents
