@@ -1,5 +1,7 @@
 # dynamic-class
 
+dynamic-class 是一個用於動態類別實例化的 TypeScript 函式庫，主要目標是更高效地實現 Design Pattern（設計模式）中的簡單工廠（Simple Factory）。透過動態類別裝飾器與動態類別工廠，開發者可以使用別名或類別名稱來動態建立類別實例、降低耦合度，提升擴展性，讓新類別可以無縫整合以及簡化 Factory Pattern 的實作，無需手動維護 Mapping Table。
+
 # Install
 
 ```
